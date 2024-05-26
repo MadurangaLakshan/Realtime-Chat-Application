@@ -1,0 +1,271 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.home-overlay {
+  background-color: #141010;
+  height: 100vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.chat-container {
+  border: 1px solid;
+  height: 100%;
+  width: 100%;
+  display: flex;
+}
+
+.sidebar {
+  background-color: #424769;
+  flex: 1;
+}
+
+.chat {
+  background-color: rgb(114, 114, 153);
+  flex: 2;
+}
+
+.navbar {
+  background-color: #2d3250;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 50px;
+  padding: 10px;
+  color: white;
+}
+
+.navbar .appName {
+  font-weight: bold;
+}
+
+.navbar .user {
+  display: flex;
+}
+
+.navbar .user > img {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 10px;
+  margin-top: 5px;
+}
+
+.navbar .user > span {
+  margin-top: 15px;
+}
+
+.navbar .user > button {
+  background-color: rgb(189, 12, 56);
+  border-radius: 5px;
+  color: white;
+  font-size: 10px;
+  border: none;
+  padding: 10px;
+  margin-left: 30px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.navbar .user > button:hover {
+  cursor: pointer;
+  background-color: rgb(211, 12, 62);
+  border-color: rgb(211, 12, 62);
+}
+.searchbar {
+  border-bottom: 1px solid gray;
+}
+.searchbar .searchForm {
+  padding: 15px;
+}
+
+.searchbar .userList {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  gap: 10px;
+  color: white;
+  cursor: pointer;
+
+  &:hover {
+    background-color: rgb(59, 59, 85);
+  }
+}
+
+.searchbar .searchForm > input {
+  background-color: transparent;
+  border-bottom: gray;
+  border: none;
+  outline: none;
+  width: 100%;
+
+  &::placeholder {
+    color: lightgrey;
+  }
+}
+
+.searchbar .userList > img {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.searchbar .userList .userInfo > span {
+  font-size: 18px;
+}
+
+.allchats .userList {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  gap: 10px;
+  color: white;
+  cursor: pointer;
+
+  &:hover {
+    background-color: rgb(59, 59, 85);
+  }
+}
+
+.allchats .userList > img {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.allchats .userChats > span {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.allchats .userChats > p {
+  font-size: 14px;
+  font-weight: bold;
+  color: lightgrey;
+}
+
+.chat .chatInfo {
+  display: flex;
+  justify-content: space-between;
+  background-color: #202020;
+  padding: 13px;
+  color: whitesmoke;
+}
+
+.chat .chatInfo .info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.chat .chatInfo .info > img {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.chat .chatInfo .options > img {
+  height: 40px;
+  width: 40px;
+}
+
+.allmessages {
+  background-image: url("../assets/chat_bg.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: #96999c;
+  padding: 10px;
+  height: calc(100% - 150px);
+  overflow-y: auto;
+}
+
+.inputpanel {
+  height: 40px;
+  background-color: white;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 2px solid rgb(102, 100, 100); /* Example border */
+}
+
+.inputpanel > input {
+  width: 90%;
+  padding: 10px;
+  border: none;
+  outline: none;
+  font-size: 16px;
+
+  &::placeholder {
+    color: rgb(184, 184, 184);
+  }
+}
+
+.inputpanel .inputoptions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.inputpanel .inputoptions > label > img {
+  height: 30px;
+  width: 30px;
+}
+.inputpanel .inputoptions > button {
+  background-color: lightgreen;
+  padding: 5px;
+  border-radius: 5px;
+  border: 2px solid rgb(13, 241, 116);
+}
+
+.inputpanel .inputoptions > button:disabled {
+  background-color: #ccc;
+  border: 2px solid #ccc;
+}
+.message {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.message.user {
+  padding-right: 10px;
+}
+
+.message .messagecontent {
+  background-color: lightblue;
+  max-width: max-content;
+  border-radius: 10px 10px 10px 0px;
+  padding: 10px;
+}
+
+.message.user .messagecontent {
+  background-color: lightgreen;
+  padding: 10px;
+  margin-left: auto;
+  border-radius: 10px 10px 0px 10px;
+}
+
+.message .messagecontent > span {
+  display: flex;
+  justify-content: end;
+  font-size: 12px;
+}
+
+.message.user .attachments {
+  margin-left: auto;
+}
+
+.attachments > img {
+  max-height: 450px;
+  max-width: 450px;
+  width: auto;
+  height: auto;
+}
