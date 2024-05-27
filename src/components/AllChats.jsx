@@ -28,8 +28,6 @@ const AllChats = () => {
     currentUser.uid && getChats();
   }, [currentUser.uid]);
 
-  // console.log(chats);
-
   const handleSelect = (user) => {
     dispatch({ type: "CHANGE_USER", payload: user });
   };

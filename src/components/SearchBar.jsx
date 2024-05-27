@@ -21,24 +21,19 @@ const Searchbar = () => {
   const { currentUser } = useContext(AuthContext);
 
   const Search = async () => {
-    console.log("pressed enter");
     const q = query(
       collection(database, "users"),
       where("userName", "==", username)
     );
 
     try {
-      console.log("trying");
       const querySnapshot = await getDocs(q);
       if (querySnapshot.empty) {
-        console.log("its emptyy");
+        console.log("No User Found");
       }
 
-      console.log("awaiting");
       querySnapshot.forEach((doc) => {
-        console.log("bruh");
         console.log(doc);
-        console.log("setting the user");
         setUser(doc.data());
       });
     } catch (error) {
@@ -52,7 +47,6 @@ const Searchbar = () => {
   };
 
   const handleChat = async () => {
-    console.log("entered handlechat");
     const combinedID =
       currentUser.uid > user.uid
         ? currentUser.uid + user.uid
@@ -60,20 +54,10 @@ const Searchbar = () => {
 
     try {
       const res = await getDoc(doc(database, "chats", combinedID));
-      console.log("created chats");
 
       if (!res.exists()) {
         await setDoc(doc(database, "chats", combinedID), { messages: [] });
-        console.log("messages array");
-        console.log(user);
-        console.log(user.uid);
-        console.log(user.userName);
-        // console.log(user.photoURL);
 
-        console.log(currentUser);
-        console.log(currentUser.uid);
-        console.log(currentUser.displayName);
-        // console.log(currentUser.photoURL);
         await updateDoc(doc(database, "userChats", currentUser.uid), {
           [combinedID + ".userInfo"]: {
             uid: user.uid,

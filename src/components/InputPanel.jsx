@@ -34,7 +34,6 @@ const InputPanel = () => {
         async () => {
           try {
             const downloadURL = await getDownloadURL(uploadTask.snapshot.ref);
-            console.log("got the download url = " + downloadURL);
 
             await updateDoc(doc(database, "chats", data.chatID), {
               messages: arrayUnion({

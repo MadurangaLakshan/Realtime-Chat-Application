@@ -14,8 +14,6 @@ const LogPage = () => {
 
   const handleLogin = async (e) => {
     e.preventDefault();
-    console.log("Email:", email);
-    console.log("Password:", password);
 
     try {
       await signInWithEmailAndPassword(auth, email, password);

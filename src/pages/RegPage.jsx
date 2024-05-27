@@ -30,7 +30,6 @@ const RegPage = () => {
       );
 
       const user = userCredential.user;
-      console.log("User created:", user);
 
       const storageRef = ref(storage, userName);
 
@@ -48,7 +47,6 @@ const RegPage = () => {
         async () => {
           try {
             const downloadURL = await getDownloadURL(uploadTask.snapshot.ref);
-            console.log("download url is :", downloadURL);
             await updateProfile(userCredential.user, {
               displayName: userName,
               photoURL: downloadURL,
