@@ -33,7 +33,6 @@ const Searchbar = () => {
       }
 
       querySnapshot.forEach((doc) => {
-        console.log(doc);
         setUser(doc.data());
       });
     } catch (error) {

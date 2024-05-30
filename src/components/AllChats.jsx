@@ -2,7 +2,6 @@ import React, { useContext, useEffect, useState } from "react";
 import { doc, onSnapshot } from "firebase/firestore";
 import { database } from "../firebase";
 import { AuthContext } from "../contexts/AuthContext";
-import chat from "./Chat";
 import { ChatContext } from "../contexts/ChatContext";
 
 const AllChats = () => {
@@ -30,7 +29,11 @@ const AllChats = () => {
 
   const handleSelect = (user) => {
     dispatch({ type: "CHANGE_USER", payload: user });
+    if (window.innerWidth <= 480) {
+      dispatch({ type: "TOGGLE_FULLSCREEN", payload: true });
+    }
   };
+
   return (
     <div className="allchats">
       {Object.entries(chats)

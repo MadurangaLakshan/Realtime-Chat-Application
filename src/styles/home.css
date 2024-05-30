@@ -26,6 +26,9 @@
 .chat {
   background-color: rgb(114, 114, 153);
   flex: 2;
+  transition: transform 0.5s ease-in-out, width 0.5s ease-in-out,
+    height 0.5s ease-in-out;
+  position: relative;
 }
 
 .navbar {
@@ -268,4 +271,74 @@
   max-width: 450px;
   width: auto;
   height: auto;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    background-color: #2d3250;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 70px;
+    padding: 10px;
+    color: white;
+  }
+
+  .navbar .user > button {
+    font-size: 10px;
+    padding: 8px;
+    margin-left: 30px;
+  }
+}
+
+@media (max-width: 481px) {
+  .navbar {
+    height: 80px;
+  }
+
+  .navbar .appName {
+    font-size: 150%;
+  }
+
+  .userList .userInfo > span {
+    font-size: 500px;
+  }
+
+  .searchbar .searchForm > input {
+    font-size: 17px;
+  }
+
+  .allchats .userChats > span {
+    font-size: 130%;
+  }
+
+  .allchats .userChats > p {
+    font-size: 130%;
+  }
+
+  .navbar .user > span {
+    font-size: 20px;
+  }
+}
+
+.chat.fullscreen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1000;
+}
+
+.chat .exitFullscreen {
+  border-radius: 10%;
+  top: 10px;
+  right: 10px;
+  background-color: rgb(129, 5, 5);
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  z-index: 1001;
 }
