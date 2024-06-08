@@ -320,25 +320,34 @@
   .navbar .user > span {
     font-size: 20px;
   }
-}
 
-.chat.fullscreen {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  z-index: 1000;
-}
+  .sidebar.fullscreen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1000;
+  }
 
-.chat .exitFullscreen {
-  border-radius: 10%;
-  top: 10px;
-  right: 10px;
-  background-color: rgb(129, 5, 5);
-  color: white;
-  border: none;
-  padding: 5px 10px;
-  cursor: pointer;
-  z-index: 1001;
+  .chat.fullscreen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1000;
+  }
+
+  .chat .exitFullscreen {
+    border-radius: 10%;
+    top: 10px;
+    right: 10px;
+    background-color: rgb(129, 5, 5);
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    z-index: 1001;
+  }
 }
